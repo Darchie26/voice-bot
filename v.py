@@ -1,4 +1,5 @@
 import speech_recognition as sr
+import time
 
 r = sr.Recognizer()
 
@@ -23,6 +24,8 @@ def record_audio():
 def respond(voice_data):
   if 'what is your name' in voice_data:
       print('My name is Curtis')
+  if 'What time is it' in voice_data:
+    print(time.ctime())
 print('How can I help you?')
 voice_data = record_audio()
 respond(voice_data)
